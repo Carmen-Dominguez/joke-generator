@@ -3,19 +3,11 @@ import React from "react";
 function Joke(props) {
     return (
     <div>
-        {renderQuestion(props.question)}
-        <p className="answer">{props.punchline}</p>
+        <p style={{ display: props.question ? "block" : "none" }} className="question">{props.question}</p>
+        <p className={ props.question ? "answer" : "question" }>{props.answer}</p>
         <br />
     </div>
     )
 }
-
-function renderQuestion(question) {
-    if (question != null) {
-        return (<p className="question">{question}</p>);
-    } else return (null);
-}
-
-
 
 export default Joke;
